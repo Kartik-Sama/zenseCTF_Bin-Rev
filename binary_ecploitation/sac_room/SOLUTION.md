@@ -8,12 +8,12 @@ We first look what functions are available.
 
 ![all listed functions](../images/sac_room1.png)
 
-The functions *sac_Room* seems the place we want to get to isn't it? Let's confirm this
+The function *sac_Room* seems the place we want to get to isn't it? Let's confirm this
 
 ![sac_Room function](../images/sac_room2.png)
 We see file operations here which confirms our assumption that if we get here something will read from an external file which potenially is the flag.
 
->But how do we get to this function?
+#### But how do we get to this function?
 
 We now try understanding the main function, and see if it helps.
 ![main function](../images/sac_room3.png)
@@ -28,4 +28,6 @@ _Look at the instructions in red in the image just above_
 - Our input is taken in by __gets__ function at __-0x50(%rbp)__ . To get to the location of aur target we are _0x50-0x4 = 0x4C (i.e. 76)_ bytes away. Thus if we filled the stack with 76 bytes of data and then some excessive data then the memory at our target will be non-zero.
 
 ## Final Result:
-    Exploit should be 76*(some character) + i*(some_character) where i in {1,2,3,4}
+```
+76*(some character) + i*(some_character) where i in {1,2,3,4} and some_character != '\0'
+```
