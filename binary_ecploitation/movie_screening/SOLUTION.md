@@ -3,7 +3,7 @@
 
     Connect to the challenge using nc chal.zense.co.in 6702
 
-> Recomended : You fully understand the sac_Room question.
+> Recommended : You fully understand the sac_Room question.
 
 Let's start with examining what the function using gdb.
 We first look what functions are available.
